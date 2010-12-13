@@ -3,9 +3,10 @@
 
 (setq tabbar-buffer-groups-function
       (lambda ()
-        (if (find (aref (buffer-name) 0) " *")
+        (if (or (string= (substring (buffer-name) 0 1) "*")
+                (string= (substring (buffer-name) 0 2) " *"))
             (list "Special Buffers")
-            (list "Files"))))
+          (list "Files"))))
 
 (setq
  tabbar-buffer-home-button (quote (("") ""))
@@ -13,14 +14,17 @@
  tabbar-scroll-right-button (quote (("") "")))
 
 (set-face-attribute
+ 'tabbar-default nil
+ :background "grey20")
+(set-face-attribute
  'tabbar-highlight nil
  :underline nil)
 (set-face-attribute
  'tabbar-unselected nil
- :foreground (face-foreground 'default)
  :box nil)
 (set-face-attribute
  'tabbar-selected nil
+ :foreground (face-foreground 'default)
  :background (face-background 'default)
  :box nil)
 (set-face-attribute
