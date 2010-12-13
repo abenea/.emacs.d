@@ -4,6 +4,7 @@
 (load-library "my-global-keybindings.el")
 (load-library "my-ido.el")
 (load-library "my-tabbar.el")
+(load-library "my-trailing-whitespace.el")
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
