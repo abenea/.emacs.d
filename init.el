@@ -2,12 +2,14 @@
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
+(add-to-list 'load-path "~/.emacs.d/private")
 
 (load-library "my-global-keybindings.el")
 (load-library "my-ido.el")
 (load-library "my-tabbar.el")
 (load-library "my-trailing-whitespace.el")
 (load-library "my-cperl.el")
+(load-library "my-python.el")
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
