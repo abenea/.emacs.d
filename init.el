@@ -1,3 +1,5 @@
+(column-number-mode t)
+
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
