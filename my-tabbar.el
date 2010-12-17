@@ -24,8 +24,8 @@
  :box nil)
 (set-face-attribute
  'tabbar-selected nil
- :foreground (face-foreground 'default)
- :background (face-background 'default)
+ :foreground "wheat"
+ :background "black"
  :box nil)
 (set-face-attribute
  'tabbar-separator nil
