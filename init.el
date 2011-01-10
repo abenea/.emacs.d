@@ -40,6 +40,7 @@
 (load-library "my-ecb.el")
 ;; (load-library "my-nxhtml.el")
 ;; (load-library "my-python.el")
+;; (load-library "my-presentation.el")
 ;; (load-library "my-trailing-whitespace.el")
 
 (when (file-exists-p "~/.emacs.d/private/init.el")
