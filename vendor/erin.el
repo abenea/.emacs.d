@@ -332,6 +332,21 @@
                      erin-heading-5-face
                      erin-heading-6-face))))
 
+      ,@(reverse
+         (let ((regexp-rest '("\\(?:!!\\)?\\)\\(?:[ \t]*\\)\\([^\n]*\\)")))
+           (mapcar (function
+                    (lambda (face)
+                      (setq regexp-rest (cons "\\#" regexp-rest))
+                      `(,(apply  'concat "^\\(-\\{3,\\}" regexp-rest)
+                        (1 'erin-deemph-markup-face)
+                        (2 (quote ,face)))))
+                   '(erin-heading-1-face
+                     erin-heading-2-face
+                     erin-heading-3-face
+                     erin-heading-4-face
+                     erin-heading-5-face
+                     erin-heading-6-face))))
+
       ;; Separator.
       ("^\\(---+\\)[ \t\r]*$" 1 'erin-separator-face)
 
