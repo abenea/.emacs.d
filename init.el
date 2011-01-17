@@ -42,6 +42,7 @@
 ;; (load-library "my-python.el")
 ;; (load-library "my-presentation.el")
 ;; (load-library "my-trailing-whitespace.el")
+(require 'erin)
 
 (when (file-exists-p "~/.emacs.d/private/init.el")
   (load-library "~/.emacs.d/private/init.el"))
