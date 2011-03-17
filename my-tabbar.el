@@ -36,5 +36,5 @@
   (setq ad-return-value
         (concat " " (concat ad-return-value " "))))
 
-(global-set-key [M-left] 'tabbar-backward-tab)
-(global-set-key [M-right] 'tabbar-forward-tab)
+(global-set-key [s-left] 'tabbar-backward-tab)
+(global-set-key [s-right] 'tabbar-forward-tab)
