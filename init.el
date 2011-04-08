@@ -42,7 +42,7 @@
 (load-library "my-org.el")
 ;; (load-library "my-nxhtml.el")
 ;; (load-library "my-presentation.el")
-;; (load-library "my-trailing-whitespace.el")
+(load-library "my-trailing-whitespace.el")
 (require 'erin)
 
 (when (file-exists-p "~/.emacs.d/private/init.el")
