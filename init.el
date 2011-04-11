@@ -15,6 +15,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(menu-bar-mode t)
+ '(rst-level-face-base-color "black")
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
