@@ -12,6 +12,7 @@
  '(emacsw32-eol-file-name-lf-list (quote (".*")))
  '(emacsw32-max-frames t)
  '(emacsw32-style-frame-title t)
+ '(fill-column 80)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(menu-bar-mode t)
