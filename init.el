@@ -31,6 +31,9 @@
 
 (column-number-mode t)
 
+(setq scroll-bar-mode-explicit t)
+(set-scroll-bar-mode `right)
+
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/private")
