@@ -3,3 +3,4 @@
 (add-hook 'cperl-mode-hook
           (lambda () (cperl-set-style "PerlStyle")))
 (setq cperl-indent-parens-as-block t)
+(add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode))
