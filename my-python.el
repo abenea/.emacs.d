@@ -17,6 +17,7 @@
                                        (python-shift-right-region)
                                      (indent-for-tab-command))))))
 
+(require 'virtualenv)
 
 (when (require 'pymacs nil t)
   (pymacs-load "ropemacs" "rope-")
