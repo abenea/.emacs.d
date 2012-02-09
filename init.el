@@ -18,6 +18,7 @@
  '(menu-bar-mode t)
  '(rst-level-face-base-color "black")
  '(show-paren-mode t)
+ '(split-width-threshold 200)
  '(tool-bar-mode nil))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
