@@ -1,3 +1,5 @@
+(require 'virtualenv)
+
 (defun python-shift-right-region ()
   (interactive)
   (let (deactivate-mark)
@@ -17,17 +19,13 @@
                                        (python-shift-right-region)
                                      (indent-for-tab-command))))))
 
-(require 'virtualenv)
-
 (when (require 'pymacs nil t)
   (pymacs-load "ropemacs" "rope-")
   (setq ropemacs-enable-autoimport t)
-  (add-hook 'python-mode-hook
-            (lambda ()
-              (local-set-key [C-f3] (lambda ()
-                                      (interactive)
-                                      (rope-find-file t)))))
-
   ;; Don't forget to rope-generate-autoimport-cache
   (setq ropemacs-guess-project t)
-  (setq ropemacs-autoimport-modules '("os" "threading")))
+  (setq ropemacs-autoimport-modules '("os" "threading"))
+
+  (add-hook 'python-mode-hook
+            (lambda ()
+              (local-set-key [C-f3] 'rope-find-file))))
