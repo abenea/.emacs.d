@@ -34,6 +34,7 @@
 
 (setq scroll-bar-mode-explicit t)
 (set-scroll-bar-mode `right)
+(setq x-select-enable-clipboard t)
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
