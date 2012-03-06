@@ -50,6 +50,7 @@
 ;; (load-library "my-nxhtml.el")
 ;; (load-library "my-presentation.el")
 (load-library "my-trailing-whitespace.el")
+(load-library "my-auto-complete.el")    ; must be loaded after python (because of ropemacs)
 (require 'erin)
 
 (when (file-exists-p "~/.emacs.d/private/init.el")
