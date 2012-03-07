@@ -45,12 +45,12 @@
 (load-library "my-tabbar.el")
 (load-library "my-cperl.el")
 (load-library "my-ecb.el")
+(load-library "my-auto-complete.el")
 (load-library "my-python.el")
 (load-library "my-org.el")
 ;; (load-library "my-nxhtml.el")
 ;; (load-library "my-presentation.el")
 (load-library "my-trailing-whitespace.el")
-(load-library "my-auto-complete.el")    ; must be loaded after python (because of ropemacs)
 (require 'erin)
 
 (when (file-exists-p "~/.emacs.d/private/init.el")
