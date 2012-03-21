@@ -29,6 +29,7 @@
 
   (add-hook 'python-mode-hook
             (lambda ()
+              (local-set-key (kbd "C-S-o") 'rope-organize-imports)
               (local-set-key [C-f3] (lambda ()
                                       (interactive)
                                       (rope-find-file t))))))
