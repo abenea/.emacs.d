@@ -1,5 +1,9 @@
 (require 'virtualenv)
 
+(defun workon ()
+  (interactive)
+  (virtualenv-workon 1))
+
 (defun python-backtab ()
   (interactive)
   (if mark-active
