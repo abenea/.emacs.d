@@ -44,7 +44,7 @@
 (load-library "my-tabbar.el")
 (load-library "my-cperl.el")
 (load-library "my-ecb.el")
-(load-library "my-auto-complete.el")
+;;(load-library "my-auto-complete.el")
 (load-library "my-python.el")
 (load-library "my-org.el")
 ;; (load-library "my-nxhtml.el")

@@ -10,19 +10,17 @@
       (let (deactivate-mark)
         (python-shift-left (region-beginning) (region-end)))))
 
-(defun ac-python-tab ()
+(defun python-tab ()
   (interactive)
   (if mark-active
       (let (deactivate-mark)
         (python-shift-right (region-beginning) (region-end)))
-    (if ac-inline
-        (auto-complete)
-      (indent-for-tab-command))))
+    (indent-for-tab-command)))
 
 (add-hook 'python-mode-hook
           (lambda ()
             (local-set-key [backtab] 'python-backtab)
-            (local-set-key [tab] 'ac-python-tab)))
+            (local-set-key [tab] 'python-tab)))
 
 (when (require 'pymacs nil t)
   (pymacs-load "ropemacs" "rope-")
