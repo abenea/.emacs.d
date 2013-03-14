@@ -19,7 +19,8 @@
  '(rst-level-face-base-color "black")
  '(show-paren-mode t)
  '(split-width-threshold 200)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(virtualenv-workon-starts-python nil))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
