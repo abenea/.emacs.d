@@ -29,6 +29,9 @@
   (setq ropemacs-guess-project t)
   (setq ropemacs-autoimport-modules '("os" "threading"))
 
+  (define-key ropemacs-local-keymap [(meta /)] 'dabbrev-expand)
+  (define-key ropemacs-local-keymap [(control c) (control /)] 'rope-code-assist)
+
   (add-hook 'python-mode-hook
             (lambda ()
               (local-set-key (kbd "C-S-o") 'rope-organize-imports)
