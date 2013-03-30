@@ -16,6 +16,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(menu-bar-mode t)
+ '(mouse-yank-at-point t)
  '(rst-level-face-base-color "black")
  '(show-paren-mode t)
  '(split-width-threshold 200)
