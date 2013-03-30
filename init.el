@@ -21,7 +21,8 @@
  '(show-paren-mode t)
  '(split-width-threshold 200)
  '(tool-bar-mode nil)
- '(virtualenv-workon-starts-python nil))
+ '(virtualenv-workon-starts-python nil)
+ '(which-function-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -30,7 +31,8 @@
  '(default ((((class color) (min-colors 88) (background dark)) (:background "black") (:foreground "wheat"))))
  '(minibuffer-noticeable-prompt ((((class color) (min-colors 88) (background light)) nil)))
  '(mumamo-background-chunk-major ((((class color) (min-colors 88) (background dark)) nil)))
- '(mumamo-background-chunk-submode1 ((((class color) (min-colors 88) (background dark)) (:background "gray5")))))
+ '(mumamo-background-chunk-submode1 ((((class color) (min-colors 88) (background dark)) (:background "gray5"))))
+ '(which-func ((t nil))))
 
 (column-number-mode t)
 
