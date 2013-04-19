@@ -8,13 +8,13 @@
   (interactive)
   (if mark-active
       (let (deactivate-mark)
-        (python-shift-left (region-beginning) (region-end)))))
+        (python-indent-shift-left (region-beginning) (region-end)))))
 
 (defun python-tab ()
   (interactive)
   (if mark-active
       (let (deactivate-mark)
-        (python-shift-right (region-beginning) (region-end)))
+        (python-indent-shift-right (region-beginning) (region-end)))
     (indent-for-tab-command)))
 
 (add-hook 'python-mode-hook
