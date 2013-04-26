@@ -36,6 +36,8 @@
 
 (column-number-mode t)
 
+(setq cmake-tab-width 4)
+
 (setq scroll-bar-mode-explicit t)
 (set-scroll-bar-mode `right)
 
