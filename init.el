@@ -45,6 +45,11 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/private")
 
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
 (load-library "my-global-keybindings.el")
 (load-library "my-ido.el")
 (load-library "my-tabbar.el")
