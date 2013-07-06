@@ -10,6 +10,6 @@
 (global-set-key [f11] 'delete-other-windows)
 (global-set-key [f12] 'ff-find-other-file)
 
-(global-set-key (kbd "C-j") 'switch-to-buffer)
+(global-set-key (kbd "M-j") 'switch-to-buffer)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-=") 'hs-toggle-hiding)
