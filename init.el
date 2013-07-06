@@ -13,6 +13,7 @@
  '(emacsw32-max-frames t)
  '(emacsw32-style-frame-title t)
  '(fill-column 80)
+ '(ido-ignore-buffers (quote ("\\` " "\\*Pymacs\\*" "\\*Messages\\*" "\\*nrepl-events\\*")))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(menu-bar-mode t)
