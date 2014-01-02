@@ -8,6 +8,7 @@
     (package-install p)))
 
 (require 'paredit-menu)
+(require 'slamhound)
 (setq nrepl-hide-special-buffers t)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
