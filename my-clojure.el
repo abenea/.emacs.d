@@ -1,6 +1,6 @@
 (defvar my-packages '(clojure-mode
                       clojure-test-mode
-                      nrepl
+                      cider
                       paredit
                       paredit-menu))
 (dolist (p my-packages)
@@ -10,4 +10,5 @@
 (require 'paredit-menu)
 (setq nrepl-hide-special-buffers t)
 (add-hook 'clojure-mode-hook 'paredit-mode)
-(add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
