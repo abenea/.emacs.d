@@ -22,6 +22,7 @@
  '(show-paren-mode t)
  '(split-width-threshold 200)
  '(tool-bar-mode nil)
+ '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(virtualenv-workon-starts-python nil)
  '(which-function-mode t))
 (custom-set-faces
