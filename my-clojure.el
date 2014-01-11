@@ -15,3 +15,16 @@
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
+
+(defun clojure-reload-and-test ()
+  (interactive)
+  (save-excursion
+    (if (clojure-test-mode)
+        (cider-load-current-buffer)
+        (clojure-jump-between-tests-and-code))
+    (clojure-test-run-tests)))
+
+(add-hook 'clojure-mode-hook
+          (lambda ()
+            (local-set-key [f12] 'clojure-jump-between-tests-and-code)
+            (local-set-key [C-f12] 'clojure-reload-and-test)))
