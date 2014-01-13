@@ -16,6 +16,13 @@
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
+;; output sent to System/out goes to the *nrepl-server* buffer, but *out* goes
+;; to the repl window; so redirect System/out to *out*
+(add-hook 'nrepl-connected-hook
+          (lambda ()
+            (nrepl-send-string-sync "(System/setOut (java.io.PrintStream. (org.apache.commons.io.output.WriterOutputStream. *out*)))")))
+
+
 (defun clojure-reload-and-test ()
   (interactive)
   (save-excursion
