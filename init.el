@@ -64,6 +64,7 @@
 (load-library "my-python.el")
 (load-library "my-org.el")
 (load-library "my-clojure.el")
+(load-library "my-4clojure.el")
 ;; (load-library "my-nxhtml.el")
 ;; (load-library "my-presentation.el")
 (load-library "my-trailing-whitespace.el")
