@@ -1,3 +1,8 @@
+(defvar my-packages '(request))
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
 (add-to-list 'load-path "~/.emacs.d/vendor/4clojure.el")
 (require '4clojure)
 
