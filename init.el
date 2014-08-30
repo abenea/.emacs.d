@@ -16,6 +16,7 @@
  '(ido-ignore-buffers (quote ("\\` " "\\*Pymacs\\*" "\\*Messages\\*" "\\*nrepl-events\\*")))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(js3-consistent-level-indent-inner-bracket t)
  '(js3-enter-indents-newline t)
  '(menu-bar-mode t)
  '(mouse-yank-at-point t)
