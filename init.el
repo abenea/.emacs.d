@@ -26,7 +26,8 @@
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(virtualenv-workon-starts-python nil)
- '(which-function-mode t))
+ '(which-function-mode t)
+ '(yas-snippet-dirs (quote ("~/.emacs.d/snippets"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -79,6 +80,8 @@
 ;; (load-library "my-nxhtml.el")
 ;; (load-library "my-presentation.el")
 (require 'erin)
+(require 'yasnippet)
+(yas-global-mode 1)
 
 (when (file-exists-p "~/.emacs.d/private/init.el")
   (load-library "~/.emacs.d/private/init.el"))
