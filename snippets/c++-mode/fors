@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: fors (size_t i = 0; i < N; i++)
+# key: fors
+# --
+for (size_t $1 = 0; $1 < $2; $1++) {
+    $0
+}
