@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: read n cases
+# key: cases
+# --
+int cases;
+scanf("%d", &cases);
+for (int cs = 1; cs <= cases; cs++) {
+    $0
+    printf("Case #%d: \n", cs);
+}
