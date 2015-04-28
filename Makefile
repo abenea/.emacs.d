@@ -1,7 +1,7 @@
 install_ropemacs:
-	pip install hg+http://bitbucket.org/agr/rope
-	pip install hg+http://bitbucket.org/agr/ropemode
-	pip install hg+http://bitbucket.org/agr/ropemacs
+	pip install git+https://github.com/python-rope/rope
+	pip install git+https://github.com/python-rope/ropemode
+	pip install git+https://github.com/python-rope/ropemacs
 	mkdir -p private
 	git clone https://github.com/pinard/Pymacs.git
 	cd Pymacs && make check && make install

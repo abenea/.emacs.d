@@ -34,6 +34,7 @@
 
   (add-hook 'python-mode-hook
             (lambda ()
+              (flycheck-mode)
               (local-set-key (kbd "C-S-o") 'rope-organize-imports)
               (local-set-key (kbd "M-.") 'rope-goto-definition)
               (local-set-key (kbd "M-,") 'rope-pop-mark)
