@@ -52,6 +52,9 @@
  '(use-package-always-ensure t)
  '(virtualenv-workon-starts-python nil)
  '(which-function-mode t))
+ '(yas-prompt-functions
+   (quote
+    (yas-ido-prompt yas-dropdown-prompt yas-completing-prompt yas-x-prompt yas-no-prompt)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

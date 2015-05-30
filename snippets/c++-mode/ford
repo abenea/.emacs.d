@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: for (int i = N; i >= 0; i--) {
+# key: ford
+# --
+for (int $1 = $2; $1 >= 0; $1--) {
+    $0
+}

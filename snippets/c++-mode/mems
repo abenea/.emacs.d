@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: memset(a, 0, sizeof(a));
+# key: mems
+# --
+memset($1, ${2:0}, sizeof($1));

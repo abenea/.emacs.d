@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: maxup, minup
+# key: maxup
+# --
+template <typename T> bool maxup(T &a, const T &b) { return a < b ? (a = b, true) : false; }
+template <typename T> bool minup(T &a, const T &b) { return a > b ? (a = b, true) : false; }
