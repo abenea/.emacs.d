@@ -38,12 +38,22 @@
       (when (buffer-contains "clojure.test")
         (clojure-test-run-tests)))))
 
+(defun clojure-reload-eval-last ()
+  (interactive)
+  (with-current-buffer (cider-current-repl-buffer)
+    (cider-tooling-eval
+     (concat "(clojure.core/require 'clojure.tools.namespace.repl) (clojure.tools.namespace.repl/refresh)"
+             (nth 0 cider-repl-input-history))
+     (cider-interactive-eval-handler (current-buffer)))))
+
 (add-hook 'clojure-mode-hook
           (lambda ()
             (local-set-key "" 'cider-jack-in)
-            (local-set-key "" 'cider-doc)
+            (local-set-key "" 'clojure-reload-eval-last)
             (local-set-key [f12] 'clojure-jump-between-tests-and-code)
             (local-set-key [C-f12] 'clojure-reload-and-test)
+            (clj-refactor-mode 1)
+            (cljr-add-keybindings-with-prefix "C-c C-s")
             (define-clojure-indent
               (facts 1)
               (fact 1))))
