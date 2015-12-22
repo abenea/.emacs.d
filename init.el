@@ -1,3 +1,11 @@
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa-stable.milkbox.net/packages/") t)
+;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
+
+(require 'yasnippet)
+(yas-global-mode 1)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -61,11 +69,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/private")
 
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa-stable.milkbox.net/packages/") t)
-;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-initialize)
-
 (load-library "my-global-keybindings.el")
 (load-library "my-ido.el")
 (load-library "my-tabbar.el")
@@ -81,8 +84,6 @@
 ;; (load-library "my-nxhtml.el")
 ;; (load-library "my-presentation.el")
 (require 'erin)
-(require 'yasnippet)
-(yas-global-mode 1)
 
 (when (file-exists-p "~/.emacs.d/private/init.el")
   (load-library "~/.emacs.d/private/init.el"))
