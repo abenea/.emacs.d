@@ -13,6 +13,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-default-style (quote ((c-mode . "stroustrup") (c++-mode . "stroustrup") (java-mode . "java") (awk-mode . "awk") (other . "gnu"))))
+ '(custom-safe-themes
+   (quote
+    ("135bbd2e531f067ed6a25287a47e490ea5ae40b7008211c70385022dbab3ab2a" default)))
  '(ecb-layout-name "right-directories")
  '(ecb-options-version "2.40")
  '(ecb-show-sources-in-directories-buffer (quote always))
@@ -31,6 +34,8 @@
  '(mouse-yank-at-point t)
  '(rst-level-face-base-color "black")
  '(show-paren-mode t)
+ '(sml/extra-filler -5)
+ '(sml/theme (quote powerline))
  '(split-width-threshold 200)
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
@@ -48,12 +53,10 @@
  '(which-func ((t nil))))
 
 (column-number-mode t)
-
 (setq cmake-tab-width 4)
 
 ;; Put backup files in ~/.emacs.d/backups instead of leaving them next to the original
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
-
 
 ;; Process ANSI escape sequences for colors in compilation mode
 (require 'ansi-color)
@@ -63,14 +66,19 @@
   (toggle-read-only))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
-(add-to-list 'load-path "~/.emacs.d/my")
-(add-to-list 'load-path "~/.emacs.d/vendor")
-(add-to-list 'load-path "~/.emacs.d/private")
-
 (use-package yasnippet
   :config
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
   (yas-global-mode 1))
+
+(use-package smart-mode-line
+  :ensure t
+  :init (use-package smart-mode-line-powerline-theme :ensure t)
+  :config (sml/setup))
+
+(add-to-list 'load-path "~/.emacs.d/my")
+(add-to-list 'load-path "~/.emacs.d/vendor")
+(add-to-list 'load-path "~/.emacs.d/private")
 
 (load-library "my-global-keybindings.el")
 (load-library "my-ido.el")
