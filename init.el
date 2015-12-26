@@ -54,8 +54,6 @@
 ;; Put backup files in ~/.emacs.d/backups instead of leaving them next to the original
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 
-(setq scroll-bar-mode-explicit t)
-(set-scroll-bar-mode `right)
 
 ;; Process ANSI escape sequences for colors in compilation mode
 (require 'ansi-color)
