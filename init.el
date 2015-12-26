@@ -27,7 +27,7 @@
  '(inhibit-startup-screen t)
  '(js3-consistent-level-indent-inner-bracket t)
  '(js3-enter-indents-newline t)
- '(menu-bar-mode t)
+ '(menu-bar-mode nil)
  '(mouse-yank-at-point t)
  '(rst-level-face-base-color "black")
  '(show-paren-mode t)
