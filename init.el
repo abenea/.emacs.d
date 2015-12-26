@@ -39,6 +39,7 @@
  '(split-width-threshold 200)
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
+ '(use-package-always-ensure t)
  '(virtualenv-workon-starts-python nil)
  '(which-function-mode t))
 (custom-set-faces
@@ -71,9 +72,8 @@
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
   (yas-global-mode 1))
 
+(use-package smart-mode-line-powerline-theme)
 (use-package smart-mode-line
-  :ensure t
-  :init (use-package smart-mode-line-powerline-theme :ensure t)
   :config (sml/setup))
 
 (add-to-list 'load-path "~/.emacs.d/my")
