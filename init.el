@@ -12,7 +12,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(c-default-style (quote ((c-mode . "stroustrup") (c++-mode . "stroustrup") (java-mode . "java") (awk-mode . "awk") (other . "gnu"))))
+ '(c-default-style
+   (quote
+    ((c-mode . "stroustrup")
+     (c++-mode . "stroustrup")
+     (java-mode . "java")
+     (awk-mode . "awk")
+     (other . "gnu"))))
  '(custom-safe-themes
    (quote
     ("135bbd2e531f067ed6a25287a47e490ea5ae40b7008211c70385022dbab3ab2a" default)))
@@ -25,7 +31,9 @@
  '(emacsw32-max-frames t)
  '(emacsw32-style-frame-title t)
  '(fill-column 80)
- '(ido-ignore-buffers (quote ("\\` " "\\*Pymacs\\*" "\\*Messages\\*" "\\*nrepl-events\\*")))
+ '(ido-ignore-buffers
+   (quote
+    ("\\` " "\\*Pymacs\\*" "\\*Messages\\*" "\\*nrepl-events\\*")))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(js3-consistent-level-indent-inner-bracket t)
