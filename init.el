@@ -2,9 +2,10 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa-stable.milkbox.net/packages/") t)
 ;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
-
-(require 'yasnippet)
-(yas-global-mode 1)
+(when (not (package-installed-p 'use-package))
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -34,8 +35,7 @@
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(virtualenv-workon-starts-python nil)
- '(which-function-mode t)
- '(yas-snippet-dirs (quote ("~/.emacs.d/snippets"))))
+ '(which-function-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -66,6 +66,11 @@
 (add-to-list 'load-path "~/.emacs.d/my")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/private")
+
+(use-package yasnippet
+  :config
+  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+  (yas-global-mode 1))
 
 (load-library "my-global-keybindings.el")
 (load-library "my-ido.el")
