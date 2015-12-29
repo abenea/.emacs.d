@@ -19,6 +19,7 @@
      (java-mode . "java")
      (awk-mode . "awk")
      (other . "gnu"))))
+ '(cider-prompt-for-symbol nil)
  '(custom-safe-themes
    (quote
     ("135bbd2e531f067ed6a25287a47e490ea5ae40b7008211c70385022dbab3ab2a" default)))
@@ -40,6 +41,7 @@
  '(js3-enter-indents-newline t)
  '(menu-bar-mode nil)
  '(mouse-yank-at-point t)
+ '(nrepl-hide-special-buffers t)
  '(rst-level-face-base-color "black")
  '(show-paren-mode t)
  '(sml/extra-filler -5)
