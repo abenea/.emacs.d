@@ -1,6 +1,6 @@
 (bind-keys ("<f2>" . save-buffer)
            ("<f3>" . find-file)
-           ("<C-f4>" . kill-this-buffer)
+           ("<C-f4>" . (lambda () (interactive) (kill-buffer (current-buffer))))
            ("<f5>" . gud-cont)
            ("<f6>" . other-window)
            ("<f7>" . gud-step)
