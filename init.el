@@ -103,6 +103,7 @@
 (load-library "my-javascript.el")
 (load-library "my-trailing-whitespace.el")
 (load-library "my-frankenstein.el")
+(load-library "my-tide.el")
 ;; (load-library "my-ecb.el")
 ;; (load-library "my-4clojure.el")
 ;; (load-library "my-nxhtml.el")
