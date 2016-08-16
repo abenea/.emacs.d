@@ -6,4 +6,6 @@
               (flycheck-mode +1)
               (setq flycheck-check-syntax-automatically '(save mode-enabled))
               (eldoc-mode +1)
-              (company-mode-on))))
+              (company-mode-on)))
+  (bind-keys :map tide-mode-map
+             ("C-M-\\" . tide-format)))
