@@ -21,6 +21,7 @@
      (awk-mode . "awk")
      (other . "gnu"))))
  '(cider-prompt-for-symbol nil)
+ '(css-indent-offset 2)
  '(custom-safe-themes
    (quote
     ("135bbd2e531f067ed6a25287a47e490ea5ae40b7008211c70385022dbab3ab2a" default)))
@@ -49,6 +50,7 @@
  '(sml/theme (quote powerline))
  '(split-width-threshold 200)
  '(tool-bar-mode nil)
+ '(typescript-indent-level 2)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(use-package-always-ensure t)
  '(virtualenv-workon-starts-python nil)
