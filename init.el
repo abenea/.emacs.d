@@ -39,6 +39,7 @@
     ("\\` " "\\*Pymacs\\*" "\\*Messages\\*" "\\*nrepl-events\\*")))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(js-indent-level 2)
  '(js3-consistent-level-indent-inner-bracket t)
  '(js3-enter-indents-newline t)
  '(menu-bar-mode nil)
