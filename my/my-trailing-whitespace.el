@@ -7,6 +7,7 @@
 (add-hook 'python-mode-hook 'trailing-whitespace-is-evil)
 (add-hook 'cperl-mode-hook 'trailing-whitespace-is-evil)
 (add-hook 'clojure-mode-hook 'trailing-whitespace-is-evil)
+(add-hook 'typescript-mode-hook 'trailing-whitespace-is-evil)
 
 (defun auto-delete-trailing-whitespace ()
   (interactive)
