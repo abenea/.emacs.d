@@ -21,6 +21,8 @@
      (awk-mode . "awk")
      (other . "gnu"))))
  '(cider-prompt-for-symbol nil)
+ '(company-idle-delay 0.2)
+ '(company-minimum-prefix-length 2)
  '(css-indent-offset 2)
  '(custom-safe-themes
    (quote
