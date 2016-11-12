@@ -87,7 +87,12 @@
  '(show-paren-mode t)
  '(sml/extra-filler -5)
  '(sml/theme (quote powerline))
+ '(speedbar-supported-extension-expressions
+   (quote
+    (".org" ".[ch]\\(\\+\\+\\|pp\\|c\\|h\\|xx\\)?" ".tex\\(i\\(nfo\\)?\\)?" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".js" ".f\\(90\\|77\\|or\\)?" ".ad[abs]" ".p[lm]" ".tcl" ".m" ".scm" ".pm" ".py" ".g" ".s?html" ".ma?k" "[Mm]akefile\\(\\.in\\)?" ".ts" ".css")))
+ '(speedbar-use-images nil)
  '(split-width-threshold 200)
+ '(sr-speedbar-auto-refresh nil)
  '(tool-bar-mode nil)
  '(typescript-indent-level 2)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
@@ -146,7 +151,7 @@
 (load-library "my-trailing-whitespace.el")
 (load-library "my-frankenstein.el")
 (load-library "my-tide.el")
-;; (load-library "my-ecb.el")
+(load-library "my-sr-speedbar.el")
 ;; (load-library "my-4clojure.el")
 ;; (load-library "my-nxhtml.el")
 ;; (load-library "my-presentation.el")
