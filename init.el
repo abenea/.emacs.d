@@ -20,6 +20,42 @@
      (java-mode . "java")
      (awk-mode . "awk")
      (other . "gnu"))))
+ '(cc-other-file-alist
+   (quote
+    (("\\.cc\\'"
+      (".hh" ".h"))
+     ("\\.hh\\'"
+      (".cc" ".C"))
+     ("\\.c\\'"
+      (".h"))
+     ("\\.m\\'"
+      (".h"))
+     ("\\.h\\'"
+      (".c" ".cc" ".C" ".CC" ".cxx" ".cpp" ".m"))
+     ("\\.C\\'"
+      (".H" ".hh" ".h"))
+     ("\\.H\\'"
+      (".C" ".CC"))
+     ("\\.CC\\'"
+      (".HH" ".H" ".hh" ".h"))
+     ("\\.HH\\'"
+      (".CC"))
+     ("\\.c\\+\\+\\'"
+      (".h++" ".hh" ".h"))
+     ("\\.h\\+\\+\\'"
+      (".c++"))
+     ("\\.cpp\\'"
+      (".hpp" ".hh" ".h"))
+     ("\\.hpp\\'"
+      (".cpp"))
+     ("\\.cxx\\'"
+      (".hxx" ".hh" ".h"))
+     ("\\.hxx\\'"
+      (".cxx"))
+     ("\\.ts\\'"
+      (".html"))
+     ("\\.html\\'"
+      (".ts")))))
  '(cider-prompt-for-symbol nil)
  '(company-idle-delay 0.2)
  '(company-minimum-prefix-length 2)
