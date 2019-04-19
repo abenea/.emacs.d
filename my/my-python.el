@@ -72,3 +72,8 @@
     (let ((lsp-cfg `(:pyls (:configurationSources ("flake8")))))
       (lsp--set-configuration lsp-cfg)))
   (add-hook 'lsp-after-initialize-hook 'lsp-set-cfg))
+
+(use-package flycheck-mypy
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'flycheck-mode))
