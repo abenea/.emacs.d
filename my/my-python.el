@@ -18,6 +18,7 @@
              ([tab] . python-tab)))
 
 (use-package yapfify
+  :ensure t
   :config
   (add-hook 'python-mode-hook 'yapf-mode)
   (bind-keys :map python-mode-map
@@ -34,22 +35,8 @@
   (bind-keys :map python-mode-map
              ("M-r" . lsp-rename))
 
-  ;; make sure we have lsp-imenu everywhere we have LSP
-  (require 'lsp-imenu)
   (add-hook 'lsp-after-open-hook 'lsp-enable-imenu)
-  ;; get lsp-python-enable defined
-  ;; NB: use either projectile-project-root or ffip-get-project-root-directory
-  ;;     or any other function that can be used to find the root directory of a project
-  (lsp-define-stdio-client lsp-python "python"
-                           #'projectile-project-root
-                           '("pyls"))
-
-  ;; make sure this is activated when python-mode is activated
-  ;; lsp-python-enable is created by macro above
-  (add-hook 'python-mode-hook
-            (lambda ()
-              (company-mode)
-              (lsp-python-enable)))
+  (add-hook 'python-mode-hook 'company-mode)
 
   ;; lsp extras
   (use-package lsp-ui

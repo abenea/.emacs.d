@@ -62,7 +62,8 @@
  '(css-indent-offset 2)
  '(custom-safe-themes
    (quote
-    ("135bbd2e531f067ed6a25287a47e490ea5ae40b7008211c70385022dbab3ab2a" default)))
+    ("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "135bbd2e531f067ed6a25287a47e490ea5ae40b7008211c70385022dbab3ab2a" default)))
+ '(default-frame-alist (quote ((fullscreen . maximized))))
  '(ecb-layout-name "right-directories")
  '(ecb-options-version "2.40")
  '(ecb-show-sources-in-directories-buffer (quote always))
@@ -83,6 +84,9 @@
  '(menu-bar-mode nil)
  '(mouse-yank-at-point t)
  '(nrepl-hide-special-buffers t)
+ '(package-selected-packages
+   (quote
+    (company-lsp lsp-ui company-go go-mode js3-mode company-tern tern company flycheck-mypy lsp-mode lsp-imenu projectile pyvenv yapfify smart-mode-line-powerline-theme yasnippet use-package dpkg-dev-el)))
  '(rst-level-face-base-color "black")
  '(show-paren-mode t)
  '(sml/extra-filler -5)
@@ -146,12 +150,12 @@
 (load-library "my-cperl.el")
 (load-library "my-python.el")
 (load-library "my-org.el")
-(load-library "my-clojure.el")
 (load-library "my-javascript.el")
 (load-library "my-trailing-whitespace.el")
 (load-library "my-go.el")
-(load-library "my-tide.el")
-(load-library "my-sr-speedbar.el")
+;; (load-library "my-tide.el")
+;; (load-library "my-sr-speedbar.el")
+;; (load-library "my-clojure.el")
 ;; (load-library "my-frankenstein.el")
 ;; (load-library "my-4clojure.el")
 ;; (load-library "my-nxhtml.el")
