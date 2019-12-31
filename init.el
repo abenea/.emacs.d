@@ -55,10 +55,15 @@
      ("\\.ts\\'"
       (".html"))
      ("\\.html\\'"
-      (".ts")))))
+      (".ts"))
+     ("\\.ok\\'"
+      (".in"))
+     ("\\.in\\'"
+      (".ok")))))
  '(cider-prompt-for-symbol nil)
  '(company-idle-delay 0.2)
  '(company-minimum-prefix-length 2)
+ '(compilation-ask-about-save nil)
  '(css-indent-offset 2)
  '(custom-safe-themes
    (quote
@@ -102,10 +107,10 @@
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(use-package-always-ensure t)
  '(virtualenv-workon-starts-python nil)
- '(which-function-mode t))
+ '(which-function-mode t)
  '(yas-prompt-functions
    (quote
-    (yas-ido-prompt yas-dropdown-prompt yas-completing-prompt yas-x-prompt yas-no-prompt)))
+    (yas-ido-prompt yas-dropdown-prompt yas-completing-prompt yas-x-prompt yas-no-prompt))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
