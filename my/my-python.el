@@ -1,3 +1,16 @@
+(use-package eglot
+  :ensure t
+  :bind (:map eglot-mode-map
+              ("C-c C-d" . eglot-help-at-point)
+              ("C-M-\\" . eglot-format)
+              ("M-r" . eglot-rename))
+  :hook ((python-mode . eglot-ensure)
+         (python-mode . company-mode)))
+
+(use-package yapfify
+  :ensure t
+  :hook (python-mode . yapf-mode))
+
 (defun python-backtab ()
   (interactive)
   (if mark-active
@@ -12,55 +25,10 @@
     (indent-for-tab-command)))
 
 (use-package python
-  :config
-  (bind-keys :map python-mode-map
-             ([backtab] . python-backtab)
-             ([tab] . python-tab)))
-
-(use-package yapfify
-  :ensure t
-  :config
-  (add-hook 'python-mode-hook 'yapf-mode)
-  (bind-keys :map python-mode-map
-             ("C-M-q" . yapfify-region)
-             ("C-M-\\" . yapfify-buffer)))
+  :bind (:map python-mode-map
+              ("<backtab>" . python-backtab)
+              ("<tab>" . python-tab))
+              ("M-<up>" . flymake-goto-prev-error)
+              ("M-<down>" . flymake-goto-next-error))
 
 (use-package pyvenv :ensure t)
-
-(use-package projectile :ensure t)
-
-(use-package lsp-mode
-  :ensure t
-  :config
-  (bind-keys :map python-mode-map
-             ("M-r" . lsp-rename))
-
-  (add-hook 'lsp-after-open-hook 'lsp-enable-imenu)
-  (add-hook 'python-mode-hook 'company-mode)
-
-  ;; lsp extras
-  (use-package lsp-ui
-    :ensure t
-    :config
-    (setq lsp-ui-sideline-ignore-duplicate t)
-    (add-hook 'lsp-mode-hook 'lsp-ui-mode))
-
-  (use-package company-lsp
-    :config
-    (push 'company-lsp company-backends))
-
-  ;; NB: only required if you prefer flake8 instead of the default
-  ;; send pyls config via lsp-after-initialize-hook -- harmless for
-  ;; other servers due to pyls key, but would prefer only sending this
-  ;; when pyls gets initialised (:initialize function in
-  ;; lsp-define-stdio-client is invoked too early (before server
-  ;; start)) -- cpbotha
-  (defun lsp-set-cfg ()
-    (let ((lsp-cfg `(:pyls (:configurationSources ("flake8")))))
-      (lsp--set-configuration lsp-cfg)))
-  (add-hook 'lsp-after-initialize-hook 'lsp-set-cfg))
-
-(use-package flycheck-mypy
-  :ensure t
-  :config
-  (add-hook 'python-mode-hook 'flycheck-mode))
