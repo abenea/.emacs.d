@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: tests
+# key: tests
+# --
+int tests;
+    cin >> tests;
+    for (int tc = 0; tc < tests; tc++) {
+        $0
+    }
