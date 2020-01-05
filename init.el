@@ -78,6 +78,8 @@
  '(emacsw32-max-frames t)
  '(emacsw32-style-frame-title t)
  '(fill-column 80)
+ '(gdb-many-windows nil)
+ '(gdb-show-main t)
  '(ido-ignore-buffers
    (quote
     ("\\` " "\\*Pymacs\\*" "\\*Messages\\*" "\\*nrepl-events\\*")))
@@ -150,14 +152,15 @@
 (add-to-list 'load-path "~/.emacs.d/private")
 
 (load-library "my-global-keybindings.el")
+(load-library "my-trailing-whitespace.el")
 (load-library "my-ido.el")
 (load-library "my-tabbar.el")
-(load-library "my-cperl.el")
 (load-library "my-python.el")
 (load-library "my-org.el")
 (load-library "my-javascript.el")
-(load-library "my-trailing-whitespace.el")
 (load-library "my-go.el")
+(load-library "my-cpp.el")
+;; (load-library "my-cperl.el")
 ;; (load-library "my-tide.el")
 ;; (load-library "my-sr-speedbar.el")
 ;; (load-library "my-clojure.el")
