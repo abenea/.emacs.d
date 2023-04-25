@@ -1,6 +1,0 @@
-[submodule "vendor/ecb"]
-	path = vendor/ecb
-	url = https://github.com/alexott/ecb.git
-[submodule "vendor/4clojure.el"]
-	path = vendor/4clojure.el
-	url = https://github.com/abenea/4clojure.el.git

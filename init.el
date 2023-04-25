@@ -33,15 +33,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-default-style
-   (quote
-    ((c-mode . "stroustrup")
+   '((c-mode . "stroustrup")
      (c++-mode . "stroustrup")
      (java-mode . "java")
      (awk-mode . "awk")
-     (other . "gnu"))))
+     (other . "gnu")))
  '(cc-other-file-alist
-   (quote
-    (("\\.cc\\'"
+   '(("\\.cc\\'"
       (".hh" ".h"))
      ("\\.hh\\'"
       (".cc" ".C"))
@@ -78,30 +76,24 @@
      ("\\.ok\\'"
       (".in"))
      ("\\.in\\'"
-      (".ok")))))
+      (".ok"))))
  '(cider-prompt-for-symbol nil)
  '(company-idle-delay 0.2)
  '(company-minimum-prefix-length 2)
  '(compilation-ask-about-save nil)
  '(css-indent-offset 2)
  '(custom-safe-themes
-   (quote
-    ("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "135bbd2e531f067ed6a25287a47e490ea5ae40b7008211c70385022dbab3ab2a" default)))
- '(default-frame-alist (quote ((fullscreen . maximized))))
- '(ecb-layout-name "right-directories")
- '(ecb-options-version "2.40")
- '(ecb-show-sources-in-directories-buffer (quote always))
- '(ecb-tip-of-the-day nil)
+   '("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "135bbd2e531f067ed6a25287a47e490ea5ae40b7008211c70385022dbab3ab2a" default))
+ '(default-frame-alist '((fullscreen . maximized)))
  '(emacsw32-eol-check-new-files t)
- '(emacsw32-eol-file-name-lf-list (quote (".*")))
+ '(emacsw32-eol-file-name-lf-list '(".*"))
  '(emacsw32-max-frames t)
  '(emacsw32-style-frame-title t)
  '(fill-column 80)
  '(gdb-many-windows nil)
  '(gdb-show-main t)
  '(ido-ignore-buffers
-   (quote
-    ("\\` " "\\*Pymacs\\*" "\\*Messages\\*" "\\*nrepl-events\\*")))
+   '("\\` " "\\*Pymacs\\*" "\\*Messages\\*" "\\*nrepl-events\\*"))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(js-indent-level 2)
@@ -111,27 +103,25 @@
  '(mouse-yank-at-point t)
  '(nrepl-hide-special-buffers t)
  '(package-selected-packages
-   (quote
-    (company-lsp lsp-ui company-go go-mode js3-mode company-tern tern company flycheck-mypy lsp-mode lsp-imenu projectile pyvenv yapfify smart-mode-line-powerline-theme yasnippet use-package dpkg-dev-el)))
+   '(esup company-tern flycheck tide ng2-mode lua-mode eglot company-lsp lsp-ui company-go go-mode js3-mode tern company flycheck-mypy lsp-mode lsp-imenu projectile pyvenv yapfify smart-mode-line-powerline-theme yasnippet use-package dpkg-dev-el))
  '(rst-level-face-base-color "black")
  '(show-paren-mode t)
  '(sml/extra-filler -5)
- '(sml/theme (quote powerline))
+ '(sml/theme 'powerline)
  '(speedbar-supported-extension-expressions
-   (quote
-    (".org" ".[ch]\\(\\+\\+\\|pp\\|c\\|h\\|xx\\)?" ".tex\\(i\\(nfo\\)?\\)?" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".js" ".f\\(90\\|77\\|or\\)?" ".ad[abs]" ".p[lm]" ".tcl" ".m" ".scm" ".pm" ".py" ".g" ".s?html" ".ma?k" "[Mm]akefile\\(\\.in\\)?" ".ts" ".css")))
+   '(".org" ".[ch]\\(\\+\\+\\|pp\\|c\\|h\\|xx\\)?" ".tex\\(i\\(nfo\\)?\\)?" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".js" ".f\\(90\\|77\\|or\\)?" ".ad[abs]" ".p[lm]" ".tcl" ".m" ".scm" ".pm" ".py" ".g" ".s?html" ".ma?k" "[Mm]akefile\\(\\.in\\)?" ".ts" ".css"))
  '(speedbar-use-images nil)
  '(split-width-threshold 200)
  '(sr-speedbar-auto-refresh nil)
  '(tool-bar-mode nil)
  '(typescript-indent-level 2)
- '(uniquify-buffer-name-style (quote forward) nil (uniquify))
+ '(uniquify-buffer-name-style 'forward nil (uniquify))
  '(use-package-always-ensure t)
  '(virtualenv-workon-starts-python nil)
+ '(warning-suppress-types '((comp) (comp)))
  '(which-function-mode t)
  '(yas-prompt-functions
-   (quote
-    (yas-ido-prompt yas-dropdown-prompt yas-completing-prompt yas-x-prompt yas-no-prompt))))
+   '(yas-ido-prompt yas-dropdown-prompt yas-completing-prompt yas-x-prompt yas-no-prompt)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -181,13 +171,8 @@
 (load-library "my-cpp.el")
 ;; (load-library "my-cperl.el")
 ;; (load-library "my-tide.el")
-;; (load-library "my-sr-speedbar.el")
 ;; (load-library "my-clojure.el")
-;; (load-library "my-frankenstein.el")
-;; (load-library "my-4clojure.el")
-;; (load-library "my-nxhtml.el")
 ;; (load-library "my-presentation.el")
-;; (require 'erin)
 
 (when (file-exists-p "~/.emacs.d/private/init.el")
   (load-library "~/.emacs.d/private/init.el"))
