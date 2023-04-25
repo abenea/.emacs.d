@@ -173,7 +173,7 @@
 
 (use-package smart-mode-line-powerline-theme)
 (use-package smart-mode-line
-  :config (sml/setup))
+  :init (sml/setup))
 
 (add-to-list 'load-path "~/.emacs.d/my")
 (load-library "my-global-keybindings.el")
