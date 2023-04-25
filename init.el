@@ -140,12 +140,7 @@
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 
 ;; Process ANSI escape sequences for colors in compilation mode
-(require 'ansi-color)
-(defun colorize-compilation-buffer ()
-  (toggle-read-only)
-  (ansi-color-apply-on-region (point-min) (point-max))
-  (toggle-read-only))
-(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+(add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
 (use-package all-the-icons
   :demand)
