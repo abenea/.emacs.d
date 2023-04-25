@@ -1,12 +1,31 @@
-(require 'package)
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-initialize)
-(when (not (package-installed-p 'use-package))
-  (package-refresh-contents)
-  (package-install 'use-package))
-(require 'use-package)
+;; -*- lexical-binding: t; -*-
+
+;; set up package manager
+(setq straight-use-package-by-default t
+      use-package-always-defer t
+      straight-cache-autoloads t
+      straight-vc-git-default-clone-depth 1
+      straight-check-for-modifications '(find-when-checking)
+      package-enable-at-startup nil
+      vc-follow-symlinks t)
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 6))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+(straight-use-package 'use-package)
+
+;; for profiling startup
+(use-package esup
+  :demand t
+  :commands esup)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
