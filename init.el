@@ -147,6 +147,7 @@
 
 (use-package centaur-tabs
   :demand
+  :defer 1
   :after all-the-icons
   :config
   (centaur-tabs-headline-match)
@@ -175,8 +176,6 @@
   :config (sml/setup))
 
 (add-to-list 'load-path "~/.emacs.d/my")
-(add-to-list 'load-path "~/.emacs.d/private")
-
 (load-library "my-global-keybindings.el")
 (load-library "my-trailing-whitespace.el")
 (load-library "my-ido.el")
@@ -189,6 +188,3 @@
 ;; (load-library "my-tide.el")
 ;; (load-library "my-clojure.el")
 ;; (load-library "my-presentation.el")
-
-(when (file-exists-p "~/.emacs.d/private/init.el")
-  (load-library "~/.emacs.d/private/init.el"))
