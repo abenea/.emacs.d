@@ -66,9 +66,12 @@
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
   (yas-global-mode 1))
 
-(use-package smart-mode-line-powerline-theme)
+(use-package smart-mode-line-powerline-theme
+  :demand)
 (use-package smart-mode-line
-  :init (sml/setup))
+  :demand
+  :after smart-mode-line-powerline-theme
+  :config (sml/setup))
 
 (add-to-list 'load-path "~/.emacs.d/my")
 (load-library "my-global-keybindings.el")
