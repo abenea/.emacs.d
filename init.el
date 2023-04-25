@@ -103,7 +103,7 @@
  '(mouse-yank-at-point t)
  '(nrepl-hide-special-buffers t)
  '(package-selected-packages
-   '(esup company-tern flycheck tide ng2-mode lua-mode eglot company-lsp lsp-ui company-go go-mode js3-mode tern company flycheck-mypy lsp-mode lsp-imenu projectile pyvenv yapfify smart-mode-line-powerline-theme yasnippet use-package dpkg-dev-el))
+   '(centaur-tabs esup company-tern flycheck tide ng2-mode lua-mode eglot company-lsp lsp-ui company-go go-mode js3-mode tern company flycheck-mypy lsp-mode lsp-imenu projectile pyvenv yapfify smart-mode-line-powerline-theme yasnippet use-package dpkg-dev-el))
  '(rst-level-face-base-color "black")
  '(show-paren-mode t)
  '(sml/extra-filler -5)
@@ -147,6 +147,29 @@
   (toggle-read-only))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
+(use-package all-the-icons
+  :demand)
+
+(use-package centaur-tabs
+  :demand
+  :after all-the-icons
+  :config
+  (centaur-tabs-headline-match)
+  (centaur-tabs-enable-buffer-reordering)
+  (centaur-tabs-mode t)
+  :custom
+  (centaur-tabs-style "bar")
+  (centaur-tabs-set-icons t)
+  (centaur-tabs-set-modified-marker t)
+  (centaur-tabs-height 28)
+  (centaur-tabs-gray-out-icons 'buffer)
+  (centaur-tabs-modified-marker "")
+  (uniquify-separator "/")
+  (uniquify-buffer-name-style 'forward)
+  :bind
+  ("s-<left>" . centaur-tabs-backward)
+  ("s-<right>" . centaur-tabs-forward))
+
 (use-package yasnippet
   :config
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
@@ -157,13 +180,11 @@
   :config (sml/setup))
 
 (add-to-list 'load-path "~/.emacs.d/my")
-(add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/private")
 
 (load-library "my-global-keybindings.el")
 (load-library "my-trailing-whitespace.el")
 (load-library "my-ido.el")
-(load-library "my-tabbar.el")
 (load-library "my-python.el")
 (load-library "my-org.el")
 (load-library "my-javascript.el")
