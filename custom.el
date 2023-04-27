@@ -69,6 +69,8 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
+ '(ivy-height 20)
+ '(ivy-mode t)
  '(js-indent-level 2)
  '(js3-consistent-level-indent-inner-bracket t)
  '(js3-enter-indents-newline t)

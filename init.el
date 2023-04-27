@@ -73,10 +73,17 @@
   :after smart-mode-line-powerline-theme
   :config (sml/setup))
 
+(use-package counsel
+  :demand
+  :bind
+  ("C-S-f" . counsel-rg)
+  :config
+  (ivy-mode)
+  (counsel-mode))
+
 (add-to-list 'load-path "~/.emacs.d/my")
 (load-library "my-global-keybindings.el")
 (load-library "my-trailing-whitespace.el")
-(load-library "my-ido.el")
 (load-library "my-python.el")
 (load-library "my-org.el")
 (load-library "my-javascript.el")
