@@ -69,12 +69,9 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
- '(ivy-height 20)
- '(ivy-mode t)
  '(js-indent-level 2)
  '(js3-consistent-level-indent-inner-bracket t)
  '(js3-enter-indents-newline t)
- '(menu-bar-mode nil)
  '(mouse-yank-at-point t)
  '(nrepl-hide-special-buffers t)
  '(quote (show-paren-mode t))
@@ -91,12 +88,3 @@
  '(which-function-mode t)
  '(yas-prompt-functions
    '(yas-ido-prompt yas-dropdown-prompt yas-completing-prompt yas-x-prompt yas-no-prompt)))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:background "black" :foreground "wheat"))))
- '(minibuffer-noticeable-prompt ((((class color) (min-colors 88) (background light)) nil)))
- '(which-func ((t nil))))

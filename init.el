@@ -7,7 +7,8 @@
       straight-vc-git-default-clone-depth 1
       straight-check-for-modifications '(find-when-checking)
       package-enable-at-startup nil
-      vc-follow-symlinks t)
+      vc-follow-symlinks t
+      debug-on-error t)
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -67,19 +68,62 @@
   (yas-global-mode 1))
 
 (use-package smart-mode-line-powerline-theme
-  :demand)
+  :defer 1)
 (use-package smart-mode-line
-  :demand
+  :defer 1
   :after smart-mode-line-powerline-theme
   :config (sml/setup))
 
-(use-package counsel
+(use-package which-key
   :demand
-  :bind
-  ("C-S-f" . counsel-rg)
   :config
-  (ivy-mode)
-  (counsel-mode))
+  (which-key-mode 1))
+
+(use-package vertico
+  :demand
+  :straight (vertico :files (:defaults "extensions/*")
+                     :includes (vertico-indexed
+                                vertico-flat
+                                vertico-grid
+                                vertico-mouse
+                                vertico-quick
+                                vertico-buffer
+                                vertico-repeat
+                                vertico-reverse
+                                vertico-directory
+                                vertico-multiform
+                                vertico-unobtrusive))
+  :custom
+  (vertico-grid-separator "       ")
+  :config
+  (vertico-mode)
+  (vertico-grid-mode))
+
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
+(use-package company
+  :defer 1
+  :config
+  (global-company-mode 1))
+(use-package company-posframe
+  :defer 1
+  :after company
+  :custom
+  (company-posframe-quickhelp-delay nil)
+  :config
+  (company-posframe-mode 1))
+
+(use-package project
+  :bind
+  ("C-p" . project-find-file))
+
+(use-package consult
+  :bind
+  ("C-S-f" . consult-ripgrep))
+(use-package ripgrep)
 
 (add-to-list 'load-path "~/.emacs.d/my")
 (load-library "my-global-keybindings.el")
@@ -93,3 +137,5 @@
 ;; (load-library "my-tide.el")
 ;; (load-library "my-clojure.el")
 ;; (load-library "my-presentation.el")
+
+(setq debug-on-error nil)
