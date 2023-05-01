@@ -35,14 +35,23 @@
 
 ;; for profiling startup
 (use-package esup
-  :demand t
   :commands esup)
+
+(use-package doom-themes
+  :custom-face
+  (which-func ((t (:foreground "white"))))
+  :init
+  (setq doom-dark+-blue-modeline t)
+  (load-theme 'doom-dark+ t))
+
+(use-package doom-modeline
+  :init
+  (doom-modeline-mode))
 
 (use-package all-the-icons
   :demand)
 
 (use-package centaur-tabs
-  :demand
   :defer 1
   :after all-the-icons
   :config
@@ -67,20 +76,13 @@
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
   (yas-global-mode 1))
 
-(use-package smart-mode-line-powerline-theme
-  :defer 1)
-(use-package smart-mode-line
-  :defer 1
-  :after smart-mode-line-powerline-theme
-  :config (sml/setup))
-
 (use-package which-key
-  :demand
-  :config
+  :custom
+  (which-key-sort-order 'which-key-prefix-then-key-order)
+  :init
   (which-key-mode 1))
 
 (use-package vertico
-  :demand
   :straight (vertico :files (:defaults "extensions/*")
                      :includes (vertico-indexed
                                 vertico-flat
@@ -95,9 +97,12 @@
                                 vertico-unobtrusive))
   :custom
   (vertico-grid-separator "       ")
-  :config
+  :init
   (vertico-mode)
-  (vertico-grid-mode))
+  (vertico-grid-mode)
+  :bind (:map vertico-map
+              ("C-<backspace>" . vertico-directory-up)
+              ("RET" . 'vertico-directory-enter)))
 
 (use-package orderless
   :custom

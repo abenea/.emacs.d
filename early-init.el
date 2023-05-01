@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
+(menu-bar-mode -1)
+(tool-bar-mode -1)
 (unless (display-graphic-p)
     (push '(menu-bar-lines . 0) default-frame-alist))
 
