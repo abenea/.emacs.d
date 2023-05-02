@@ -77,11 +77,16 @@
   (yas-global-mode 1))
 
 (use-package which-key
+  :defer 1
   :custom
   (which-key-sort-order 'which-key-prefix-then-key-order)
-  :init
+  :config
   (which-key-mode 1))
 
+(use-package marginalia
+  :defer 1
+  :config
+  (marginalia-mode))
 (use-package vertico
   :straight (vertico :files (:defaults "extensions/*")
                      :includes (vertico-indexed
@@ -97,9 +102,12 @@
                                 vertico-unobtrusive))
   :custom
   (vertico-grid-separator "       ")
+  (vertico-multiform-categories
+   '((file grid)
+     (project-file grid)))
   :init
   (vertico-mode)
-  (vertico-grid-mode)
+  (vertico-multiform-mode)
   :bind (:map vertico-map
               ("C-<backspace>" . vertico-directory-up)
               ("RET" . 'vertico-directory-enter)))
@@ -135,11 +143,11 @@
 (load-library "my-cpp.el")
 (load-library "my-global-keybindings.el")
 (load-library "my-javascript.el")
+(load-library "my-org.el")
 (load-library "my-python.el")
 (load-library "my-trailing-whitespace.el")
 ;; (load-library "my-cperl.el")
 ;; (load-library "my-go.el")
-;; (load-library "my-org.el")
 ;; (load-library "my-presentation.el")
 ;; (load-library "my-tide.el")
 

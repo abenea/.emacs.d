@@ -2,8 +2,10 @@
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-(unless (display-graphic-p)
-    (push '(menu-bar-lines . 0) default-frame-alist))
+(setq default-frame-alist '((menu-bar-lines . 0)
+                            (tool-bar-lines . 0)
+                            (vertical-scroll-bars)
+                            ((fullscreen . maximized))))
 
 ;;
 ;; Stolen from Doom Emacs FAQ
